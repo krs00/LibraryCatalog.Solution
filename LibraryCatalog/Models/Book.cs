@@ -15,8 +15,9 @@ namespace LibraryCatalog.Models
     [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     [Required(ErrorMessage = "Book must have due date!")]
     public DateTime DueDate { get; set; }
-    public List<Author> Author {  get; set; } // NAVIGATION PROPERTY  
-    public Author Author { get; set; } // REFERENCE NAVIGATION PROPERTY
+    public List<Author> Authors {  get; set; } // Navigation Property 
+    public Author Author { get; set; } // Reference Navigation Property
+    public int AuthorId { get; set; } // Foreign Key 
 
 
   }
