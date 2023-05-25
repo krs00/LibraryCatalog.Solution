@@ -18,33 +18,36 @@ namespace LibraryCatalog.Controllers
 
     public ActionResult Index()
     {
-      // List<Course> model = _db.Courses
-      //                                 .Include(course => course.Department)
-      //                                 .ToList();
-      return View(model);
+      List<Author> model = _db.Authors
+                                      .Include(author => author.Books)
+                                      .ToList(); 
+      return View(model); 
     }
 
-//     public ActionResult Create()
-//     {
-//       ViewBag.DepartmentId = new SelectList(_db.Departments, "DepartmentId", "Name");
-//       return View();
-//     }
+    public ActionResult Create()
+    {
+      // ViewBag.DepartmentId = new SelectList(_db.Departments, "DepartmentId", "Name");
+      return View();
+    }
 
-//     [HttpPost]
-//     public ActionResult Create(Course course)
-//     {
-//       if (!ModelState.IsValid)
-//       {
-//         ViewBag.DepartmentId = new SelectList(_db.Departments, "DepartmentId", "Name");
-//         return View(course);
-//       }
-//       else
-//       {
-//         _db.Courses.Add(course);
-//         _db.SaveChanges();
-//         return RedirectToAction("Index");
-//       }
-//     }
+    [HttpPost]
+    public ActionResult Create(Author author)
+    {
+      // if (!ModelState.IsValid)
+      // {
+      //   ViewBag.DepartmentId = new SelectList(_db.Departments, "DepartmentId", "Name");
+      //   return View(course);
+      // }
+      // else
+      // {
+      //   _db.Authors.Add(author);
+      //   _db.SaveChanges();
+      //   return RedirectToAction("Index");
+      // } 
+        _db.Authors.Add(author);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+    }
 
 //     public ActionResult Details(int id)
 //     {
