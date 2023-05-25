@@ -1,3 +1,26 @@
 @{
   Layout = "_Layout";
 }
+
+@using LibraryCatalog.Models;
+
+<h2>All Authors!</h2>
+<br>
+
+@if (@Model.Count == 0)
+{
+  <h3>No authors have added yet!</h3>
+}
+else 
+{
+  <ul>
+    @foreach (Author author in Model)
+    {
+      <li>@Html.ActionLink($"{author.FirstName} {author.LastName}", "Details", new { id = author.AuthorId})</li>
+    }
+  </ul> 
+}
+
+<br>
+<p>@Html.ActionLink("Add Author", "Create")</p>
+<p>@Html.ActionLink("Back to Home", "Index", "Home")</p>
