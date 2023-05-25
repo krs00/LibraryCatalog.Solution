@@ -6,15 +6,17 @@
 
 <h2>Add an Author!</h2>
 
+<br>
+
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.FirstName)
+  @Html.LabelFor(model => model.FirstName, "Enter First Name: ")
   @Html.TextBoxFor(model => model.FirstName)
 
   <br>
   <br>
 
-  @Html.LabelFor(model => model.LastName)
+  @Html.LabelFor(model => model.LastName, "Enter Last Name:")
   @Html.TextBoxFor(model => model.LastName)
 
   <br>
