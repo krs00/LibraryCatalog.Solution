@@ -7,11 +7,11 @@ using System.Linq;
 
 namespace LibraryCatalog.Controllers
 {
-  public class AuthorsController : Controller
+  public class BooksController : Controller
   {
     private readonly LibraryCatalogContext _db;
 
-    public AuthorsController(LibraryCatalogContext db)
+    public BooksController(LibraryCatalogContext db)
     {
       _db = db;
     }
